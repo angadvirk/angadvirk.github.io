@@ -230,8 +230,11 @@ input, select, textarea {
 		transform: translate3d(0,0,0); */
 	/* Set your background with this */
 
-		background: #348cb2 url("images/famousCover.png") 50% 33%;
-		/* background-repeat: repeat-x; */
+		background: #eeeeec url("images/famousCover.png") 50% 33%;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    /* height: auto; */
+    width: auto\9; /* ie8 */
 		height: 100%;
 		left: 0;
 		opacity: 1;
