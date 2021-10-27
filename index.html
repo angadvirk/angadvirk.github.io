@@ -43,6 +43,9 @@
                 height: 16px;
                 /* display:inline-block */
             }
+            #hiddenMessage {
+              display: none;
+            }
             #foxDash-icon {
                 width: 24px;
                 height: 24px;
@@ -62,13 +65,21 @@
                 }
                 element.style.display = "none"; // hide downloads button
             }
+            function showHiddenMessage(element) {
+              // element.style.display = "none";
+              document.getElementById("hiddenMessage").style.display = "inline-block";
+            }
         </script>
     </head>
     <body>
         <div id="main-container">
             <h1>Angad Virk</h1>
-            <p><a href="./assets/resume.pdf">[Resume]</a></p>
-            <br>
+            <nav>
+              <p>Resume</p>
+              <a href="./assets/resume.pdf" onclick=showHiddenMessage(this)>[Download]</a> 
+              <span id="hiddenMessage" style="font-style: normal;"> (Check your downloads folder)</span>
+            </nav>
+            <!-- <br> -->
             <p>Links</p>
             <nav>
                 <img src="https://github.com/fluidicon.png" alt="GitHub">
