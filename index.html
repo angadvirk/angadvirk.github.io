@@ -1,12 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Pages</title>
-</head>
-<body>
-  Hello World.
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>angadvirk.github.io</title>
+        <style>
+            #main-container { 
+                /* height: 40%; */
+                margin: 0 auto;
+                margin-top: 5%;
+                width: 500px;
+                text-align: center;
+                /* vertical-align: center; */
+            }
+            a {
+                text-decoration: none;
+            }
+            a:link {
+                color: #0000EE;
+            }
+            a:visited {
+                color: #0000EE;
+            }
+            a:active {
+                color: #EE0000;
+            }
+            a:hover {
+                text-decoration:underline;
+            }
+            nav {
+                margin: 0 auto;
+                margin-bottom: 16px;
+            }
+            p {
+                margin: 0 auto;
+                margin-bottom: 8px;
+                font-style: italic;
+            }
+            img {
+                width: 16px;
+                height: 16px;
+                /* display:inline-block */
+            }
+            #foxDash-icon {
+                width: 24px;
+                height: 24px;
+                margin: -3px -3px;
+            }
+            .inline-div {
+                display: inline-block;
+            }
+        </style>
+        <script>
+            function showDownloads(element) {
+                let siblings = element.parentElement.children; // includes 'element'
+                for (let i = 0; i < siblings.length; i++) {
+                    if (siblings[i].nodeName === "A" && siblings[i].hasAttribute("download")) {
+                        siblings[i].style.display = "initial"; // show downloads
+                    }
+                }
+                element.style.display = "none"; // hide downloads button
+            }
+        </script>
+    </head>
+    <body>
+        <div id="main-container">
+            <h1>Angad Virk</h1>
+            <p><a href="./assets/resume.pdf">[Resume]</a></p>
+            <br>
+            <p>Links</p>
+            <nav>
+                <img src="https://github.com/fluidicon.png" alt="GitHub">
+                <a href="https://github.com/angadvirk" target="_blank">
+                    github
+                </a> 
+                <br>
+                <img src="https://www.youtube.com/s/desktop/e342c29d/img/favicon.ico" alt="YouTube">
+                <a href="https://www.youtube.com/channel/UCr6V6qB0RiawVEQETW0SZrQ/featured" target="_blank">
+                    youtube
+                </a>
+                <br>
+                <img src="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" alt="LinkedIn">
+                <a href="https://www.linkedin.com/in/angadvirk/" target="_blank">
+                    linkedIn
+                </a>
+                <!-- <br> -->
+                <!-- blog (w.i.p) -->
+            </nav>
+            <p>Projects</p>
+            <nav>
+                <div class="inline-div">
+                    <img src="./assets/images/foxDash-icon.png" alt="FoxDash" id="foxDash-icon">
+                    foxDash
+                    <a href="https://www.dropbox.com/s/8vlgl00h0vagbfj/FoxDash1.1_setup_x86.exe?dl=1" style="display:none" download>[win,</a>
+                    <a href="https://www.dropbox.com/s/d1bnlxe65cy6y22/FoxDash1.1.dmg?dl=1" style="display:none" download>mac]</a> 
+                    <a href="javascript:;" onclick=showDownloads(this)>[app]</a>
+                    <a href="https://github.com/angadvirk/foxdash" target="_blank" rel="noopener noreferrer">[code]</a>
+                </div>
+                <br>
+                
+                <div class="inline-div">
+                    <img src="./assets/images/getItDone-icon.png" alt="Get It Done Timer">
+                    getItDone
+                    <a href="https://avirk-getitdonetimer.000webhostapp.com/" target="_blank" rel="noopener noreferrer">[app]</a>
+                    <a href="https://github.com/angadvirk/get-it-done-timer" target="_blank" rel="noopener noreferrer">[code]</a>   
+                </div>
+            </nav>
+        </div>
+    </body>
 </html>
