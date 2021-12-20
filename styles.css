@@ -43,3 +43,7 @@ img {
 .inline-div {
   display: inline-block;
 }
+.social-icon {
+  width: 16px;
+  height: 16px;
+}
