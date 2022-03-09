@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get-It-Done Timer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/png" href="images/getItTimerFaviconNoOutline.png">
+</head>
+<body>
+  <header>
+    <h1>Get-It-Done Timer</h1>
+  </header>
+  <audio src="sounds/singleFingerCymbal.wav" style="display:none;" id="breakSound"></audio>
+  <audio src="sounds/doubleFingerCymbal.wav" style="display:none;" id="focusSound"></audio>
+  <audio src="sounds/tadaSound.wav" style="display:none;" id="tadaSound"></audio>
+  <div id="menuButtons">
+    <div id="settingsButton" class="menuButton">SETTINGS</div>
+    <div id="helpButton" class="menuButton">HELP</div>
+    <div id="aboutButton" class="menuButton">ABOUT</div>
+  </div>
+  <div id="mainMenuScene">
+    <div id="mainMenuChild">
+      <div class="intro">
+        <p id="focusQuery">Enter Focus Period:</p>
+      </div>
+      <div class="focusInput">
+        <input type="number" class="inputBoxes" id="focusHoursInput" min="0" max="23" value="0"><span> hours</span>
+        <input type="number" class="inputBoxes" id="focusMinsInput" min="0" max="59" value="25"><span> mins</span>
+        <input type="number" class="inputBoxes" id="focusSecsInput" min="0" max="59" value="0"><span> secs</span>
+      </div>
+      <p id="breakQuery">Enter Break Duration:</p>
+      <div class="breakInput">
+        <input type="number" class="inputBoxes" id="breakMinsInput" min="0" max="59" value="5"><span> mins</span>
+        <input type="number" class="inputBoxes" id="breakSecsInput" min="0" max="59" value="0"><span> secs</span>
+      </div>
+      <p id="cyclesQuery">Enter number of Cycles:</p>
+      <div class="cyclesInput">
+        <input type="number" class="inputBoxes" id="cycleCountInput" min="0" max="100" value="2"><span> Cycles</span>
+      </div>
+      <p id="totalTimeMessage">Total time you'll work:</p>
+      <p id="totalTime"></p>
+      <p id="warning"></p>
+
+      <div id="startButton">GET IT DONE!</div>  
+      <p id="endTip">(The timer will sound an alert for you at the end of each focus period as well as each break. All you have to worry about now is getting things done. Y'welc.)</p>
+    </div> 
+  </div>
+  <div id="timerScene">
+    <div id="timerChild">
+      <p id="timerFocusMessage" class="timerMessage">Focus!</p>
+      <p id="timerBreakMessage" class="timerMessage">Break!</p>
+      <div id="timer" class="timers">
+        <span id="timerFocusHours" class="timer"></span>:<span id="timerFocusMins" class="timer"></span>:<span id="timerFocusSecs" class="timer"></span>
+      </div>
+      <div id="pauseButton">PAUSE</div>
+      <div id="cancelButton">CANCEL</div>
+    </div>
+  </div>
+  <div id="menuItems">
+
+    <div class="modal modalHidden" id="modalCycleErrorDiv">
+      <div class="modal__contents">
+        <p id="cycleErrorHeading">ERROR</p>
+        <br />
+        <p id="cycleErrorMessage">The number of cycles must have a value that is greater than 0.</p> <br />
+        <div class="backButton" id="cycleErrorBackButton">BACK</div>
+      </div>
+    </div>
+    <div class="modal modalHidden" id="modalSettingsDiv">
+      <div class="modal__contents">
+        <p id="settingsHeading">SETTINGS</p>
+        <br />
+        <p id="settingsMessage">Your focus period, break duration and cycles are saved automatically whenever you start the timer, and will be the default values for the timer the next time you visit this web page. You can click the 'clear' button to clear these saved settings, and return them to the defaults.</p> <br />
+        <span>I wanted to make this timer as simple and distraction-free as possible, so there aren't any other features. But if you have some feedback/a feature that you'd really like to see, you can </span><a href="mailto:angad.virk@gmail.com">email me.</a>
+        <br />
+        <br />
+        <span id="clearButton">CLEAR</span><div class="backButton" id="settingsBackButton">BACK</div>
+      </div>
+    </div>
+    <div class="modal modalHidden" id="modalHelpDiv">
+      <div class="modal__contents">
+        <p id="helpHeading">HELP</p>
+        <br />
+        <div id="helpMessage">
+          <ul id="helpList">
+            <li>Pick a focus period, break duration, and number of cycles (the default of 25-minute focus periods with 5-minute breaks is recommended to start).</li>
+            <li>Work as fast and as efficiently as possible during the focus period.</li>
+            <li>Stop working, and relax during the break. Take deep breaths, meditate, take a walk, etc. Such activities will get your mind ready to focus once again.</li>
+            <li>NOTE: Don't start watching Netflix or browsing social media during your breaks. These activities can actually stress you out further. Instead, consciously relax. </li>
+            <li>Also, don't skip the breaks. I myself have a bad habit of sometimes skipping breaks because I want to finish working early, but I end up being less efficient because my mind gets tired.</li>
+            <li>Repeat this for as many cycles as you need to.</li>
+            <li>Practice daily to improve your focus.</li>
+            <li>Profit. Lots and lots of profit.</li>
+          </ul>
+        </div>
+        <br />
+        <div class="backButton" id="helpBackButton">BACK</div>
+      </div>
+    </div>
+    <div class="modal modalHidden" id="modalAboutDiv">
+      <div class='modal__contents'>
+        <p id="aboutHeading">ABOUT GET-IT-DONE TIMER</p>
+        <br />
+        <p id="aboutMessage">Hi, my name is Angad, and I made Get-It-Done Timer in my free time because I wanted to make a simple, easy-to-use study/work timer with minimal distractions (no unnecessary notifications, links, shiny, nonessential features, etc). This way it's just you, the timer, and your work. I hope you find it useful! (For help & tips on how to use the timer, click the 'HELP' button on the previous screen)</p>
+        <br />
+        <p id="linksMessage">Links to my stuff:</p>
+        <a href="https://github.com/angadvirk">GitHub</a>
+        <span> (https://github.com/angadvirk)</span> 
+        <br />
+        <a href="https://www.youtube.com/channel/UCr6V6qB0RiawVEQETW0SZrQ"> YouTube</a> 
+        <span>(https://www.youtube.com/channel/UCr6V6qB0RiawVEQETW0SZrQ)</span>
+        <br />
+        <a href="https://www.instagram.com/angadsvirk">Instagram</a>
+        <span>(https://www.instagram.com/angadsvirk)</span>
+        <br /> <br />
+        <div class="backButton" id="aboutBackButton">BACK</div>
+      </div>
+    </div>
+  </div>
+  <div class="modal modalHidden" id="modalPauseDiv">
+    <div class="modal__contents">
+      <p id="pauseMessage">Paused! Time remaining in current session:</p>
+      <div id="timeRemaining" class="timers">
+        <span id="remHours" class="timer"></span>:<span id="remMins" class="timer"></span>:<span id="remSecs" class="timer"></span>
+      </div>
+      <p id="resumeButton">RESUME</p>
+    </div>
+  </div>
+  <div class="modal modalHidden" id="modalDiv">
+    <div class="modal__contents">
+      <p id="congratsMessage">You've finished all your cycles! What a legend.</p>
+      <div id="returnButton">RETURN TO MENU</div>
+    </div>
+  </div>
+  <script src="app.js" charset="utf-8"></script>
+</body>
+</html>
