@@ -8,34 +8,36 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- My CSS -->
     <link rel="stylesheet" href="./styles.css">
-    <title>angadvirk.github.io</title>
-    <script>
-      function showDownloads(element) {
-        let siblings = element.parentElement.children; // includes 'element'
-        for (let i = 0; i < siblings.length; i++) {
-          if (siblings[i].nodeName === "A" && siblings[i].hasAttribute("download")) {
-            siblings[i].style.display = "initial"; // show downloads
-          }
-        }
-        element.style.display = "none"; // hide downloads button
-      }
-      function showHiddenMessage(element) {
-        document.getElementById("hiddenMessage").style.display = "inline-block";
-      }
-    </script>
+    <title>Angad Virk</title>
   </head>
 
   <body>
     <div class="container text-center">
       <h1 id="mainHeading" class="display-4">Angad Virk</h1>
-      <nav>
-        <p>Resume</p>
-        <span>📃 </span><a href="./assets/resume.pdf" onclick=showHiddenMessage(this)>[download]</a> 
-        <span id="hiddenMessage" style="font-style: normal;"> (check your downloads folder)</span>
-      </nav>
+      <h6 class="mainSubHeading">
+        <a href="https://github.com/angadvirk" target="_blank">
+          Software Developer
+        </a>
+        ◆
+        <a href="https://www.youtube.com/channel/UCr6V6qB0RiawVEQETW0SZrQ/featured" target="_blank">
+          Musician 
+        </a>
+        ◆
+        <a href="https://www.brandonsanderson.com/what-is-the-cosmere/" target="_blank">
+          Cosmere Scholar
+        </a>
+      </h6>
+      <p id="description">Hi, I'm Angad. I'm a Software Developer with a love for design and clean code. My primary experience lies in developing Web and Mobile Applications using various technologies such as Angular, React, Bootstrap, Swift, Plain HTML, CSS & JavaScript, and more.</p>
+      <hr>
+      <section>
+        <p class="lead">Resumé</p>
+        <span>📃 Resumé </span><a href="./assets/resume.pdf" onclick=showHiddenMessage(this)>[click me]</a> 
+        <span class="fade-in" id="hiddenMessage" style="font-style: normal;"> (check your downloads folder)</span>
+      </section>
       <!-- <br> -->
-      <p>Links</p>
-      <nav>
+      <!-- OLD LINKS: -->
+      <!-- <nav> 
+        <p class="p-italic">Links</p>  
         <img src="assets/images/github-icon.png" alt="GitHub" class="social-icon">
         <a href="https://github.com/angadvirk" target="_blank">
           GitHub
@@ -55,13 +57,19 @@
         <a href="https://www.instagram.com/angadsvirk/" target="_blank">
           Instagram
         </a>
-      </nav>
-      <p>Projects</p>
-      <nav>
+      </nav> -->
+      <section>
+        <p class="lead">Projects</p>
+        <div class="inline-div">
+          <img src="assets/images/siitch-icon.png" alt="Siitch">
+          Siitch
+          <a href="assets/video/siitch-demo.mov" target="_blank" rel="noopener noreferrer">[demo]</a>
+        </div>
+        <br>
         <div class="inline-div">
           <img src="./assets/images/weather-icon.png" alt="WeatherApp">
           WeatherApp (iOS)
-          <a href="./assets/video/weather-video.mp4" target="_blank" rel="noopener noreferrer" download>[demo]</a>
+          <a href="assets/video/weather-video.mp4" target="_blank" rel="noopener noreferrer">[demo]</a>
           <a href="https://github.com/angadvirk/WeatherApp-iOS" target="_blank" rel="noopener noreferrer">[code]</a>
         </div>
         <br>
@@ -93,7 +101,46 @@
           <a href="javascript:;" onclick=showDownloads(this)>[app]</a>
           <a href="https://github.com/angadvirk/foxdash" target="_blank" rel="noopener noreferrer">[code]</a>
         </div>
-      </nav>
+      </section>
+      <hr>
+      <div>
+        <h3 class="subHeading"><button id="thoughtButton" class="btn btn-link" onclick=generateThought(this)>Tell Me Something Interesting</button></h3>
+        <p id="interestingThought">(Click above for something interesting...)</p>
+      </div>
+      <hr>
+      <footer>
+        <nav id="links"> 
+          <a href="/">
+          <strong>Angad Virk</strong>
+          </a>
+          • 
+          <img src="assets/images/github-icon.png" alt="GitHub" class="social-icon">
+          <a href="https://github.com/angadvirk" target="_blank">
+            GitHub
+          </a>
+          • 
+          <!-- <br> -->
+          <img src="assets/images/linkedin-icon.png" alt="LinkedIn" class="social-icon">
+          <a href="https://www.linkedin.com/in/angadvirk/" target="_blank">
+            LinkedIn
+          </a>
+          <!-- •
+          <br>
+          <img src="assets/images/youtube-icon.png" alt="YouTube" class="social-icon">
+          <a href="https://www.youtube.com/channel/UCr6V6qB0RiawVEQETW0SZrQ/featured" target="_blank">
+            YouTube
+          </a> -->
+          •
+          <!-- <br> -->
+          <img src="assets/images/instagram-icon.png" alt="Instagram" class="social-icon">
+          <a href="https://www.instagram.com/angadsvirk/" target="_blank">
+            Instagram
+          </a>
+        </nav>
+      </footer>
+      
     </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
