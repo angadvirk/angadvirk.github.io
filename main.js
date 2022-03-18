@@ -34,6 +34,10 @@ function generateThought(element) {
   setTimeout(() => { // execute the following after the animation transition
     element.style.pointerEvents = "auto";
     // element.removeAttribute("disabled");
+    if (document.getElementById("interestingThought").classList.contains("text-center")) {
+      document.getElementById("interestingThought").classList.remove("text-center");
+      document.getElementById("interestingThought").classList.add("text-left");
+    }
     document.getElementById("interestingThought").innerHTML = thought;
     document.getElementById("interestingThought").style.opacity = 1;
     document.getElementById("interestingThought").scrollIntoView({behavior: "smooth"}); // Scroll to thought
