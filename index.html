@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <div class="container text-center">
+    <div class="container">
       <h1 id="mainHeading" class="display-4"><a href="/">Angad Virk</a></h1>
       <!-- <h6 class="mainSubHeading">
         <a href="https://github.com/angadvirk" target="_blank">
@@ -29,11 +29,10 @@
       </h6> -->
       <p id="description">Hi, I'm Angad. I'm a Software Developer with a love for design and clean code. My primary experience lies in developing Web and Mobile Applications using various technologies such as Angular, React, Bootstrap, Swift, Plain HTML, CSS & JavaScript, and more.</p>
       <hr>
-      <section>
+      <section id="resumeAndProjects" class="text-center">
         <p class="lead">Resumé</p>
         <span>📃 Resumé </span><a href="./assets/resume.pdf" onclick=showHiddenMessage(this)>[click me]</a> 
         <span class="fade-in" id="hiddenMessage" style="font-style: normal;"> (check your downloads folder)</span>
-      </section>
       <!-- <br> -->
       <!-- OLD LINKS: -->
       <!-- <nav> 
@@ -58,7 +57,7 @@
           Instagram
         </a>
       </nav> -->
-      <section>
+        <br> <br>
         <p class="lead">Projects</p>
         <div class="inline-div">
           <img src="assets/images/siitch-icon.png" alt="Siitch">
@@ -104,12 +103,12 @@
       </section>
       <hr>
       <div>
-        <h3 class="subHeading"><button id="thoughtButton" class="btn btn-link" onclick=generateThought(this)>Tell Me Something Interesting</button></h3>
-        <p id="interestingThought">(Click above for something interesting...)</p>
+        <h3 class="subHeading text-center"><button id="thoughtButton" class="btn btn-link" onclick=generateThought(this)>Tell Me Something Interesting</button></h3>
+        <p class="text-center" id="interestingThought">(Click above for something interesting...)</p>
       </div>
       <hr>
       <footer>
-        <nav id="links"> 
+        <nav class="text-center" id="links"> 
           <a href="/">
           <strong>Angad Virk</strong>
           </a>
@@ -138,7 +137,6 @@
           </a>
         </nav>
       </footer>
-      
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="main.js"></script>
