@@ -15,11 +15,11 @@ function showHiddenMessage(element) {
 function generateThought(element) {
   document.getElementById("interestingThought").style.opacity = 0;
   var thoughts = [
+    "One of the things Ford Prefect had always found hardest to understand about humans was their habit of continually stating and repeating the very very obvious. ― Douglas Adams, The Hitchhiker's Guide to the Galaxy",
     "Our suffering is connected with our guidance, and it's better not to try to silence it. The only approach to suffering is to understand it. — A. H. Almaas",
-    "If you aren't failing at least a little, you could be learning faster.",
-    "The straightest path to continued happiness is to expose yourself to flow.",
     "You need downtime to process things. True commitment means that when time off comes, the subconscious is still at work turning things over in the background, whereas someone who is overworked and stressed will just be trying to get through the day and then mentally checkout the minute they are done. — Gabe da Silveira",
-    "You do need to program a lot to become a good programmer. But it's easy to be distracted and lose focus on your task, or just never get in the zone to begin with. All the more so because programming often involves abstract research or synthesizing new ideas... Time away from the keyboard can recharge and give a boost to your productivity as a programmer. If you can summon that excitement and passion every time you sit down to the keyboard, and do so on a regular basis, that is far more important than time card bragging rights. — Gabe da Silveira",
+    "You must try harder. It is not easy to become sane. ― George Orwell, 1984",
+    "One of the hardest tasks as a human being is knowing when to keep an open mind, and when not to. ― Deb Caletti", 
     "Clever code is a symptom of poor understanding. Your clever code does not impress me, your clever code makes me feel stupid. Obvious code is much more impressive than clever code; I'd love to read more obvious code in my life. — Justin Searls",
     "Humans are bad at predicting the performance of complex systems. Our ability to create large and complex systems fools us into believing that we're also entitled to understand them. — Carlos Bueno",
   ];
